@@ -1,0 +1,19 @@
+This is a little script I did to screencapture sole tutorials.
+Basically it is a mixture of two scripts:
+- first one is from metalx1000
+- second is from AutoStatic
+
+1) Simply drop the script to a folder where you want to store the video
+2) Alter the first line to give the video a name
+3) start jack with f.e. QJackCtl
+4) run the script from shell
+5) use the little x that appears to choose the window you want to capture or the desctop for fullscreen
+5) connect the outputs of the apps you use to the input "ffmpeg" and "system"
+
+to end the script simply use <CTRL> - <C>
+you now can author the video with any videoeditor you like
+
+btw: I take no warrenty for this script ;) 
+ 
+have fun
+ungleichkang-at-gmail-dot-com
