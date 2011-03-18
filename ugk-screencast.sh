@@ -1,5 +1,13 @@
 #!/bin/bash
-echo -e "\nJack has to be up and running\n"
+
+#checking if Jackd is running
+
+if ps ax | grep -v grep | grep jackd > /dev/null
+then
+	echo -e "Jack is up and running "
+else
+	echo -e "Jack is not running, please start jack before you go on "
+fi
 
 # insert your desired filename below, extension will be added automatically
 echo -n "Enter your desired videoname without [.avi] fileextension and hit <ENTER>: "
