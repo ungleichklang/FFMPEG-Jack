@@ -3,6 +3,19 @@ Basically it is a mixture of two scripts:
 - first one is from metalx1000
 - second is from AutoStatic
 
+REQUREMENTS:
+- you will need 'xwininfo' installed
+- ffmpeg has to be compiled with 'jack'
+
+CHECKING FFMPEG with JACK:
+to check if ffmpeg is compiled with jack simply run in your terminal:
+$ ffmpeg -formats | grep jack
+
+an output should apear like this:
+D  jack    JACK Audio Connection Kit
+
+
+RUNNING the script:
 1) Simply drop the script to a folder where you want to store the video
 2) Alter the first line to give the video a name
 3) start jack with f.e. QJackCtl
@@ -17,3 +30,6 @@ btw: I take no warrenty for this script ;)
  
 have fun
 ungleichkang-at-gmail-dot-com
+
+oh yes LICENSE:
+a-do-what-you-want-with-it-hope-it-helps LICENSE
