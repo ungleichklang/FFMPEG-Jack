@@ -1,12 +1,18 @@
 #!/bin/bash
 
 #checking if Jackd is running
-
 if ps ax | grep -v grep | grep jackd > /dev/null
 then
 	echo -e "Jack is up and running "
 else
 	echo -e "Jack is not running, please start jack before you go on "
+fi
+
+#checking if ffmpeg can handle jack
+if ! ffmpeg -formats |& grep jack > /dev/null
+then
+	echo -e "FFmpeg is not compiled with jack"
+	exit
 fi
 
 # insert your desired filename below, extension will be added automatically
