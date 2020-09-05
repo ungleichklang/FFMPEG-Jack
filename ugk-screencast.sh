@@ -24,8 +24,8 @@ echo -e "\nto stop the script use <CTRL><C>"
 
 INFO=$(xwininfo -frame)
 
-WIN_GEO=$(echo "$INFO"|grep -e "Height:" -e "Width:"|cut -d\: -f2|tr "\n" " "|awk '{print $1 "x" $2}')
-WIN_POS=$(echo "$INFO"|grep "upper-left"|head -n 2|cut -d\: -f2|tr "\n" " "|awk '{print $1 "," $2}')
+WIN_GEO=$(echo "$INFO"|grep -e "Height:" -e "Width:"|cut -d\: -f2|tr "\n" " "|awk '{print sprintf("%.0f",$1/2)*2 "x" sprintf("%.0f",$2/2)*2}')
+WIN_POS=$(echo "$INFO"|grep "upper-left"|head -n 2  |cut -d\: -f2|tr "\n" " "|awk '{print $1 "," $2}')
 
 ffmpeg -f jack -ac 2 -i ffmpeg -f x11grab -s $WIN_GEO -r 15 -i :0.0+$WIN_POS -acodec pcm_s16le -sameq "$SaveName.avi"
 
